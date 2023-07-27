@@ -1,4 +1,4 @@
-#Script que busca arquivos que terminam com ".txt" no diretório "Meus Documentos":
+#Script que busca arquivos que terminam com ".txt" no diretório informado pelo usuário.
 
 #!/bin/bash
 
@@ -21,4 +21,37 @@ Certifique-se de salvar o script com uma extensão .sh, como "buscar_txt.sh", po
 
 ======================================================================
 
-#
+#Script que recebe o nome de um diretório informado pelo usuário e retorna a quantidade de arquivos que o diretório contém.
+
+#!/bin/bash
+
+# Solicita ao usuário o nome do diretório
+echo "Digite o caminho completo do diretório:"
+read diretorio
+
+# Verifica se o diretório existe
+if [ ! -d "$diretorio" ]; then
+  echo "O diretório não existe."
+  exit 1
+fi
+
+# Contagem de arquivos
+contador=0
+
+# Loop pelos arquivos no diretório
+for arquivo in "$diretorio"/*; do
+  if [ -f "$arquivo" ]; then
+    contador=$((contador + 1))
+  fi
+done
+
+# Exibe o resultado
+echo "O diretório $diretorio contém $contador arquivos."
+
+Neste script, usamos o comando read para solicitar ao usuário que digite o caminho completo do diretório que deseja verificar. O valor digitado pelo usuário é armazenado na variável diretorio.
+Em seguida, verificamos se o diretório informado existe usando a condição [ -d "$diretorio" ]. Se o diretório não existir, exibimos uma mensagem de erro e saímos do script.
+Em seguida, inicializamos um contador com o valor zero. Usamos um loop for para percorrer todos os arquivos no diretório. Se o arquivo for um arquivo regular (não um diretório), incrementamos o contador.
+Por fim, exibimos a quantidade de arquivos encontrados no diretório informado.
+Salve o script em um arquivo com uma extensão .sh, como contar_arquivos.sh, e execute-o no terminal usando o comando bash contar_arquivos.sh. Ele solicitará que você digite o caminho do diretório e exibirá a quantidade de arquivos presentes nele.
+
+==================================================================
