@@ -1,0 +1,24 @@
+#Script que busca arquivos que terminam com ".txt" no diretório "Meus Documentos":
+
+#!/bin/bash
+
+# Diretório de busca
+echo "Informe diretório em que deseja realizar a busca: "
+read diretorio
+
+# Busca por arquivos .txt no diretório especificado
+arquivos=$(find "$diretorio" -type f -name "*.txt")
+
+# Verifica se foram encontrados arquivos
+if [ -z "$arquivos" ]; then
+    echo "Nenhum arquivo .txt encontrado no diretório $diretorio."
+else
+    echo "Arquivos .txt encontrados no diretório $diretorio:"
+    echo "$arquivos"
+fi
+
+Certifique-se de salvar o script com uma extensão .sh, como "buscar_txt.sh", por exemplo. Em seguida, abra o terminal, navegue até o diretório onde o script está salvo e execute-o digitando ./buscar_txt.sh. Ele irá buscar por arquivos .txt no diretório informado e exibirá os resultados, caso encontre algum.
+
+======================================================================
+
+#
