@@ -55,3 +55,43 @@ Por fim, exibimos a quantidade de arquivos encontrados no diretório informado.
 Salve o script em um arquivo com uma extensão .sh, como contar_arquivos.sh, e execute-o no terminal usando o comando bash contar_arquivos.sh. Ele solicitará que você digite o caminho do diretório e exibirá a quantidade de arquivos presentes nele.
 
 ==================================================================
+
+array=("lua" "sol" "praia") // cria array
+
+echo ${array[*]} // retorna array
+
+echo ${#array[@]} // retorna tamanho do array  
+
+
+
+#percorre o array, retornando cada elemento
+
+for i in "${array[@]}"
+do
+	echo "$i"   
+done
+
+
+
+#percorre o array, retornando o primeiro caractere de cada elemento
+
+for i in "${array[@]}"
+do 
+	echo "${i:0:1}"  
+done
+
+
+
+#usuário informa nome de arquivo e o script retorna se é 'file' ou 'diretorio'
+
+read arquivo
+
+if [[ -f "$arquivo" ]]
+then
+	echo "file"
+else 
+	if [[ -d "$arquivo" ]]
+	then
+		echo "diretório"
+	fi
+fi
