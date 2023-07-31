@@ -98,3 +98,52 @@ fi
 
 #retorna lista de todos os subdiretórios, excluindo os arquivos
 ls -d */ 
+
+========================
+#
+## cria diretórios e move arquivos para seus respectivos diretórios
+#
+#!/bin/bash
+
+mkdir /home/dannilo/arquivos_txt
+
+#lista e filtra arquivos com .txt, criando o array arquivo
+arquivo=`ls | grep "\.txt"`
+
+#
+mv ${arquivo[*]} /home/dannilo/arquivos_txt
+
+#listar arquivos .c e mover todos para uma pasta de arquivos_c
+
+mkdir /home/dannilo/arquivos_c
+
+arquiv=`ls | grep "\.c"`
+
+mv ${arquivo[*]} /home/dannilo/arquivos_c
+
+#listar arquivos .py e mover todos para uma pasta de arquivos_python
+
+mkdir /home/dannilo/arquivos_python
+
+arquivo=`ls | grep "\.py"`
+
+mv ${arquivo[*]} /home/dannilo/arquivos_python
+
+#listar arquivos .sh e mover todos para uma pasta de arquivos_shell
+
+mkdir /home/dannilo/arquivos_shell
+
+arquivo=`ls | grep "\.sh"`
+
+mv ${arquivo[*]} /home/dannilo/arquivos_shell
+
+#listar arquivos .php e mover todos para uma pasta arquivos_php
+
+mkdir /home/dannilo/arquivos_php
+
+arquivo=`ls | grep "\.php"`
+
+mv ${arquivo[*]} /home/dannilo/arquivos_php 
+
+
+=================================
