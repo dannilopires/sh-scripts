@@ -86,12 +86,15 @@ done
 
 read arquivo
 
-if [[ -f "$arquivo" ]]
-then
+if [ -f "$arquivo" ];then
 	echo "file"
-else 
-	if [[ -d "$arquivo" ]]
-	then
-		echo "diretório"
+	else 
+		if [ -d "$arquivo" ];then
+			echo "diretório"
 	fi
 fi
+
+========================
+
+#retorna lista de todos os subdiretórios, excluindo os arquivos
+ls -d */ 
