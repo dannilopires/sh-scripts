@@ -58,9 +58,9 @@ Salve o script em um arquivo com uma extensão .sh, como contar_arquivos.sh, e e
 
 array=("lua" "sol" "praia") // cria array
 
-echo ${array[*]} // retorna array
+echo ${array[*]} ou echo ${array[@]} // retorna array
 
-echo ${#array[@]} // retorna tamanho do array  
+echo ${#array[@]} ou echo ${#array[*]} // retorna tamanho do array  
 
 
 
